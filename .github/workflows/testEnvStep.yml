@@ -1,0 +1,29 @@
+name: Test AZURE_CORE_OUTPUT at step level
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  test:
+    runs-on: ubuntu-latest
+      
+    steps:
+      - name: Azure CLI script
+        uses: azure/cli@v1
+        with:
+          inlineScript: |
+            az version
+        env:
+          AZURE_CORE_OUTPUT: None
+          
+      - name: run az cli in shell
+        run: |
+          az version
+        env:
+          AZURE_CORE_OUTPUT: None
+          
+      - name: Azure CLI script with no impact
+        uses: azure/cli@v1
+        with:
+          inlineScript: |
+            az version
