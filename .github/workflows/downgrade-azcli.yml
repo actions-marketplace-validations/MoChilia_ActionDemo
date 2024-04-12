@@ -38,13 +38,11 @@ jobs:
          run: |
             az --version
             $ProgressPreference = 'SilentlyContinue'; 
-            Invoke-WebRequest -Uri https://azcliprod.blob.core.windows.net/msi/azure-cli-2.59.0.msi
-            -OutFile .\azure-cli-2.59.0.msi; 
+            Invoke-WebRequest -Uri https://azcliprod.blob.core.windows.net/msi/azure-cli-2.59.0.msi -OutFile .\azure-cli-2.59.0.msi; 
             Start-Process msiexec.exe -Wait -ArgumentList ' /X azure-cli-2.59.0.msi /quiet'; 
             az --version
             Remove-Item .\azure-cli-2.59.0.msi
-            Invoke-WebRequest -Uri https://azcliprod.blob.core.windows.net/msi/azure-cli-2.58.0.msi
-            -OutFile .\azure-cli-2.58.0.msi; 
+            Invoke-WebRequest -Uri https://azcliprod.blob.core.windows.net/msi/azure-cli-2.58.0.msi -OutFile .\azure-cli-2.58.0.msi; 
             Start-Process msiexec.exe -Wait -ArgumentList ' /I azure-cli-2.58.0.msi /quiet'; 
             az --version
             Remove-Item .\azure-cli-2.58.0.msi
