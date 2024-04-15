@@ -40,7 +40,11 @@ jobs:
             
        - name: install azure-cli 2.58.0
          run: |
-            $ProgressPreference = 'SilentlyContinue'; Invoke-WebRequest -Uri https://azcliprod.blob.core.windows.net/msi/azure-cli-2.58.0.msi -OutFile .\AzureCLI.msi; Start-Process msiexec.exe -Wait -ArgumentList '/I AzureCLI.msi /quiet'; Remove-Item .\AzureCLI.msi
+            $ProgressPreference = 'SilentlyContinue'
+            Invoke-WebRequest -Uri https://azcliprod.blob.core.windows.net/msi/azure-cli-2.58.0.msi -OutFile .\azure-cli-2.58.0.msi
+            Start-Process msiexec.exe -Wait -ArgumentList ' /I azure-cli-2.58.0.msi /quiet'
+            az --version
+            Remove-Item .\azure-cli-2.58.0.msi
       
        - name: check azure-cli version
          run: |
