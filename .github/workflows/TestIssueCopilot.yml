@@ -1,0 +1,14 @@
+name: Run GitHub issue copilot
+on:
+  push:
+  issues:
+    types: [opened, edited]
+
+jobs:
+  Issue:
+     runs-on: ubuntu-latest
+     steps:
+     - name: Run GitHub issue copilot
+       uses: MoChilia/IssueCopilot@dev
+       with:
+         password: ${{secrets.COPILOT_PASSWORD}}
