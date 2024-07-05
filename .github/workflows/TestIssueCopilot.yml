@@ -10,6 +10,6 @@ jobs:
      runs-on: ubuntu-latest
      steps:
      - name: Run GitHub issue copilot
-       uses: MoChilia/IssueCopilot@dev
+       uses: MoChilia/IssueCopilot@main
        with:
          password: ${{secrets.COPILOT_PASSWORD}}
