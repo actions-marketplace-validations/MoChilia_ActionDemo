@@ -1,6 +1,5 @@
 name: Run GitHub issue copilot
 on:
-  push:
   issues:
     types: [opened, edited]
 
