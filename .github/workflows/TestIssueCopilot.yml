@@ -6,6 +6,8 @@ on:
 
 jobs:
   Issue:
+     permissions:
+        issues: write
      runs-on: ubuntu-latest
      steps:
      - name: Run GitHub issue copilot
