@@ -1,7 +1,7 @@
 name: Run GitHub issue copilot
 on:
   issues:
-    types: [opened, edited]
+    types: [opened, edited, closed]
 
 jobs:
   Issue:
@@ -10,6 +10,6 @@ jobs:
      runs-on: ubuntu-latest
      steps:
      - name: Run GitHub issue copilot
-       uses: MoChilia/IssueCopilot@main
+       uses: MoChilia/IssueCopilot@dev
        with:
          password: ${{secrets.COPILOT_PASSWORD}}
