@@ -4,12 +4,12 @@ on:
     types: [opened, edited, closed]
 
 jobs:
-  Issue:
-     permissions:
-        issues: write
-     runs-on: ubuntu-latest
-     steps:
-     - name: Run GitHub issue copilot
-       uses: MoChilia/IssueCopilot@768eb62c2889b4ad5932342e99ae8300849f7593
-       with:
-         password: ${{secrets.COPILOT_PASSWORD}}
+  Issue-copilot:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Run GitHub issue copilot
+        uses: MoChilia/IssueCopilot@v0
+        with:
+          password: ${{secrets.COPILOT_PASSWORD}}
