@@ -1,15 +1,15 @@
-name: Run GitHub issue copilot
+name: Run issue sentinel
 on:
   issues:
-    types: [opened, edited, closed]
+      types: [opened, edited, closed]
 
 jobs:
-  Issue-copilot:
-    runs-on: ubuntu-latest
-    permissions:
-      issues: write
-    steps:
-      - name: Run GitHub issue copilot
-        uses: MoChilia/IssueCopilot@v0
+  Issue:
+      permissions:
+          issues: write
+      runs-on: ubuntu-latest
+      steps:
+      - name: Run Issue Sentinel
+        uses: Azure/issue-sentinel@dev
         with:
           password: ${{secrets.COPILOT_PASSWORD}}
