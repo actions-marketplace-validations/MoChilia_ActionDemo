@@ -10,7 +10,7 @@ jobs:
       runs-on: ubuntu-latest
       steps:
       - name: Run Issue Sentinel
-        uses: Azure/issue-sentinel@v1
+        uses: mochilia/issue-sentinel@security-bot
         with:
           password: ${{secrets.COPILOT_PASSWORD}}
           enable-security-issues-scanning: true
