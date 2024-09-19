@@ -13,4 +13,5 @@ jobs:
         uses: mochilia/issue-sentinel@security-bot
         with:
           password: ${{secrets.COPILOT_PASSWORD}}
-          enable-security-issues-scanning: true
+          enable-similar-issues-scanning: true # Scan similar issues in your repo, default: true
+          enable-security-issues-scanning: true # Scan security issues in your repo, default: false
