@@ -13,3 +13,4 @@ jobs:
         uses: Azure/issue-sentinel@v1
         with:
           password: ${{secrets.COPILOT_PASSWORD}}
+          enable-security-issues-scanning: true
