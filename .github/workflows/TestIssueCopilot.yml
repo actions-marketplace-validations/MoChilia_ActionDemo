@@ -13,5 +13,5 @@ jobs:
         uses: azure/issue-sentinel@v1
         with:
           password: ${{secrets.COPILOT_PASSWORD}}
-          enable-similar-issues-scanning: true # Scan similar issues in your repo, default: true
+          enable-similar-issues-scanning: false # Scan similar issues in your repo, default: true
           enable-security-issues-scanning: true # Scan security issues in your repo, default: false
