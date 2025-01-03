@@ -10,7 +10,7 @@ jobs:
       runs-on: ubuntu-latest
       steps:
       - name: Run Issue Sentinel
-        uses: mochilia/issue-sentinel@label0102
+        uses: azure/issue-sentinel@v1.3.1
         with:
           password: ${{secrets.COPILOT_PASSWORD}}
           enable-similar-issues-scanning: true # Scan similar issues in your repo, default: true
