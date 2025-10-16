@@ -10,7 +10,7 @@ jobs:
       runs-on: ubuntu-latest
       steps:
       - name: Run Issue Sentinel
-        uses: azure/issue-sentinel@dependabot/npm_and_yarn/form-data-4.0.4
+        uses: mochilia/issue-sentinel@check-comment
         with:
           password: ${{secrets.COPILOT_PASSWORD}}
           enable-similar-issues-scanning: true # Scan similar issues in your repo, default: true
