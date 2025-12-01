@@ -12,5 +12,6 @@ jobs:
       - name: Run Issue Sentinel
         uses: mochilia/issue-sentinel@authbytoken
         with:
+          password: ${{secrets.COPILOT_PASSWORD}}
           enable-similar-issues-scanning: true # Scan similar issues in your repo, default: true
           enable-security-issues-scanning: true # Scan security issues in your repo, default: false
