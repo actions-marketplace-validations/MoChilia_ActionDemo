@@ -14,7 +14,11 @@ jobs:
       - name: Measure az --help performance  
         shell: pwsh  
         run: |  
-          # az version
+          $sw = [System.Diagnostics.Stopwatch]::StartNew()  
+          az version
+          $sw.Stop()  
+          $elapsed = $sw.Elapsed.TotalSeconds  
+          Write-Host "First run execution time for az version: $elapsed seconds"  
           $sw = [System.Diagnostics.Stopwatch]::StartNew()  
           az --help > $null  
           $sw.Stop()  
