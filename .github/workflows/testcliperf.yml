@@ -23,8 +23,8 @@ jobs:
               az --help > $null  
               $sw.Stop()  
               $elapsed = $sw.Elapsed.TotalSeconds  
-              Write-Host "Run $i: $elapsed seconds"  
+              Write-Host "Run ${i}: ${elapsed} seconds"  
               $times += $elapsed  
           }  
           $average = ($times | Measure-Object -Average).Average  
-          Write-Host "Average execution time for az --help: $average seconds"  
+          Write-Host "Average execution time for az --help: ${average} seconds"  
