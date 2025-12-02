@@ -11,7 +11,7 @@ jobs:
       - name: Measure az --help performance  
         shell: pwsh  
         run: |  
-          az version
+          # az version
           $sw = [System.Diagnostics.Stopwatch]::StartNew()  
           az --help > $null  
           $sw.Stop()  
