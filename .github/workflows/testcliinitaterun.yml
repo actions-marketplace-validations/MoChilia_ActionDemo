@@ -1,4 +1,4 @@
-name: 'az version is slow on first run'
+name: 'az is slow on first run'
 
 on: [workflow_dispatch]
 
@@ -12,4 +12,9 @@ jobs:
         
     steps:
     - run: echo ${{ matrix.run }}
-    - run: az version --debug --verbose
+    - run: |
+          $sw = [System.Diagnostics.Stopwatch]::StartNew()  
+          az --help > $null  
+          $sw.Stop()  
+          $elapsed = $sw.Elapsed.TotalSeconds  
+          Write-Host "First run execution time for az --help: ${elapsed} seconds"
