@@ -1,20 +1,20 @@
-name: 'az is slow on first run'
-
-on: [workflow_dispatch]
-
-jobs:
-  test:
-    name: test
-    runs-on: ubuntu-latest   
-    strategy:
-      matrix:
-        run: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
-        
-    steps:
+name: 'az is slow on first run'  
+  
+on: [workflow_dispatch]  
+  
+jobs:  
+  test:  
+    name: test  
+    runs-on: ubuntu-latest  
+    strategy:  
+      matrix:  
+        run: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]  
+    steps:  
       - name: Measure first run of az --help  
+        shell: pwsh  
         run: |  
           $sw = [System.Diagnostics.Stopwatch]::StartNew()  
           az --help > $null  
           $sw.Stop()  
           $elapsed = $sw.Elapsed.TotalSeconds  
-          Write-Host "First run execution time for az --help: ${elapsed} seconds" 
+          Write-Host "First run execution time for az --help: ${elapsed} seconds"  
