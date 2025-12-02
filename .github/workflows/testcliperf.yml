@@ -19,6 +19,7 @@ jobs:
           $sw.Stop()  
           $elapsed = $sw.Elapsed.TotalSeconds  
           Write-Host "First run execution time for az version: $elapsed seconds"  
+          az config set core.use_command_index=true
           $sw = [System.Diagnostics.Stopwatch]::StartNew()  
           az --help > $null  
           $sw.Stop()  
