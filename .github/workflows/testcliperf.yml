@@ -1,0 +1,30 @@
+name: Test az --help Performance  
+  
+on:  
+  workflow_dispatch:  
+  
+jobs:  
+  test-performance:  
+    runs-on: ubuntu-latest  
+  
+    steps:  
+      - name: Measure az --help performance  
+        shell: pwsh  
+        run: |  
+          az version
+          $sw = [System.Diagnostics.Stopwatch]::StartNew()  
+          az --help > $null  
+          $sw.Stop()  
+          $elapsed = $sw.Elapsed.TotalSeconds  
+          Write-Host "First run execution time for az --help: $elapsed seconds"  
+          $times = @()  
+          for ($i = 1; $i -le 10; $i++) {  
+              $sw = [System.Diagnostics.Stopwatch]::StartNew()  
+              az --help > $null  
+              $sw.Stop()  
+              $elapsed = $sw.Elapsed.TotalSeconds  
+              Write-Host "Run $i: $elapsed seconds"  
+              $times += $elapsed  
+          }  
+          $average = ($times | Measure-Object -Average).Average  
+          Write-Host "Average execution time for az --help: $average seconds"  
