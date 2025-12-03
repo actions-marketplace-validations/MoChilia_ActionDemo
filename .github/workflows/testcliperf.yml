@@ -37,7 +37,7 @@ jobs:
           $times = @()  
           for ($i = 1; $i -le 10; $i++) {  
               $sw = [System.Diagnostics.Stopwatch]::StartNew()  
-              az vm --help > $null  
+              az vm create --help > $null  
               $sw.Stop()  
               $elapsed = $sw.Elapsed.TotalSeconds  
               $times += $elapsed  
