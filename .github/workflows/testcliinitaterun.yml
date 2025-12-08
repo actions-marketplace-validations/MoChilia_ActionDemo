@@ -46,7 +46,7 @@ jobs:
 
           
   test-macos:  
-    name: Test Linux ${{ matrix.run }}  
+    name: Test MacOS ${{ matrix.run }}  
     runs-on: macos-latest  
     strategy:  
       matrix:  
