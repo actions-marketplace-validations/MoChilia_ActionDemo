@@ -10,7 +10,7 @@ jobs:
       runs-on: ubuntu-latest
       steps:
       - name: Run Issue Sentinel
-        uses: mochilia/issue-sentinel@enable-ux-tag
+        uses: azure/issue-sentinel@v1.5.0
         with:
           enable-similar-issues-scanning: true # Scan similar issues in your repo, default: true
           enable-security-issues-scanning: true # Scan security issues in your repo, default: false
